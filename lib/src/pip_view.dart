@@ -86,7 +86,7 @@ class PIPViewState extends State<PIPView> with TickerProviderStateMixin {
   void stopFloating() async{
     if (_isAnimating() || _bottomView == null) return;
     dismissKeyboard(context);
-    await onClosing();
+    await widget.onClosing();
     _toggleFloatingAnimationController.reverse().whenCompleteOrCancel(() {
       if (mounted) {
         setState(() {
